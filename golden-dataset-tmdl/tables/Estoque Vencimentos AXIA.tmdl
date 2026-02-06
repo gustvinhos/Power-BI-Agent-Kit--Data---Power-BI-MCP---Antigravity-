@@ -1,0 +1,262 @@
+table 'Estoque Vencimentos AXIA'
+	lineageTag: c7feb6cb-37d7-488f-af00-fc33f74e15fa
+
+	column FILIAL_Protheus
+		dataType: string
+		lineageTag: f5a46b56-2096-4f9e-b8e7-f702dd307aa4
+		summarizeBy: none
+		sourceColumn: FILIAL_Protheus
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILIAL_ABV
+		dataType: string
+		lineageTag: 38d365b2-95de-4620-8190-88008d98b9d4
+		summarizeBy: none
+		sourceColumn: FILIAL_ABV
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPJ_LOJA
+		dataType: string
+		lineageTag: 0e8b6c8c-8185-4095-919e-189f35e116ea
+		summarizeBy: none
+		sourceColumn: CNPJ_LOJA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CIDADE
+		dataType: string
+		lineageTag: f8801839-71f1-46ca-a168-25a3dac61f1c
+		summarizeBy: none
+		sourceColumn: CIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PRODUTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 990d34ae-202f-4622-8957-0de1903785ff
+		summarizeBy: none
+		sourceColumn: ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column dsc_produto
+		dataType: string
+		lineageTag: 34d6ceb5-2f7c-498f-bfd2-30f172b0fb33
+		summarizeBy: none
+		sourceColumn: dsc_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_DISP
+		dataType: double
+		lineageTag: 660625c8-40fd-441e-8e93-a1168fcb4cc6
+		summarizeBy: sum
+		sourceColumn: QTD_DISP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DOC_ORIGEM
+		dataType: string
+		lineageTag: a4750ac3-220f-445a-b9bb-67ec177e6eaf
+		summarizeBy: none
+		sourceColumn: DOC_ORIGEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUM_DOC
+		dataType: string
+		lineageTag: 4b2ae0d9-896a-478c-8393-226453f6d7a7
+		summarizeBy: none
+		sourceColumn: NUM_DOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERIE_DOC
+		dataType: string
+		lineageTag: becac446-965a-43fb-bf05-379566be37a1
+		summarizeBy: none
+		sourceColumn: SERIE_DOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOTE
+		dataType: string
+		lineageTag: 6c262a65-892d-4020-b279-3a0dcb1d654f
+		summarizeBy: none
+		sourceColumn: LOTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_VALIDADE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c6bf7a32-c1b6-4357-a600-416636a3183d
+		summarizeBy: none
+		sourceColumn: DATA_VALIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_FABRICACAO
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 713e37dc-de3a-4ea4-b65c-194a836cd09a
+		summarizeBy: none
+		sourceColumn: DATA_FABRICACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTO_ENTRADA
+		dataType: double
+		lineageTag: d92d1492-b300-4f4b-bfea-b64c3d54dacb
+		summarizeBy: sum
+		sourceColumn: CUSTO_ENTRADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_MEDIO
+		dataType: double
+		lineageTag: feafd73e-5fde-4ffd-93b6-89ccaa8eac1d
+		summarizeBy: sum
+		sourceColumn: CUSTO_MEDIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_TOTAL
+		dataType: double
+		lineageTag: b4a7dc12-da48-4a12-8ccc-77eef3eecd9e
+		summarizeBy: sum
+		sourceColumn: CUSTO_TOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLIFOR
+		dataType: string
+		lineageTag: 07f9828a-73f0-4afc-85fe-8961aa6ee4e7
+		summarizeBy: none
+		sourceColumn: CLIFOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOJA_CLIFOR
+		dataType: string
+		lineageTag: b0a30207-0e54-4417-b9a1-886405e9e786
+		summarizeBy: none
+		sourceColumn: LOJA_CLIFOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_FORN
+		dataType: string
+		lineageTag: 8d542c9f-0efc-4565-8551-9ef115cbca84
+		summarizeBy: none
+		sourceColumn: NOM_FORN
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_CLIENTE
+		dataType: string
+		lineageTag: 3399bb7f-a0d5-45ee-973b-c8fb433fdf2b
+		summarizeBy: none
+		sourceColumn: NOM_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dias Ate Vencer' = 'Estoque Vencimentos AXIA'[DATA_VALIDADE]-today()
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c6d669b-9eef-4167-8b87-f7be3b3f88ed
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vencimento =
+			
+			IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<0,"Vencido",
+			               IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<30,"30 dias",
+			                IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<60,"60 dias",
+			                IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<90,"90 dias",
+			                IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<120,"120 dias",
+			                if('Estoque Vencimentos AXIA'[Dias Ate Vencer]<150,"150 dias",
+			                IF('Estoque Vencimentos AXIA'[Dias Ate Vencer]<180,"180 dias","+180 dias")))))))
+		lineageTag: 1cd132b5-4080-4f3f-b25a-bb7a453be66c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Peso =
+			
+			IF(RELATED('Dim Produto AXIA'[Peso])>0,RELATED('Dim Produto AXIA'[Peso]),1)
+		lineageTag: 39bf77a8-f388-40d3-bb45-02558ce7b7fd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QTD_DISP_KG =
+			
+			'Estoque Vencimentos AXIA'[QTD_DISP]*'Estoque Vencimentos AXIA'[Peso]
+		lineageTag: ba7ea16d-f48d-44cd-b97e-800f511ea27c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CODIGO_TRANSACIONAL
+		dataType: string
+		lineageTag: 97d3c552-2305-45de-a661-5ceb81b1f8e1
+		summarizeBy: none
+		sourceColumn: CODIGO_TRANSACIONAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIGEM
+		dataType: string
+		lineageTag: cfd7fdba-5b77-4ca8-9588-df5fd187c9a0
+		summarizeBy: none
+		sourceColumn: ORIGEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_LOCAL
+		dataType: string
+		lineageTag: 6bde722a-4db2-4aa9-9e80-c328ba45ded4
+		summarizeBy: none
+		sourceColumn: COD_LOCAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ARMAZEM_LOCAL
+		dataType: string
+		lineageTag: 7db18aea-7143-4403-837d-acc94d7ae42a
+		summarizeBy: none
+		sourceColumn: ARMAZEM_LOCAL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Estoque Vencimentos AXIA' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="select * from [8_AUX].[VW_ESTOQUE_LOTE_VALIDADE_UNIFICADO]"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

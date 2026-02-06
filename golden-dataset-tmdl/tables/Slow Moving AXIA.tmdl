@@ -1,0 +1,263 @@
+table 'Slow Moving AXIA'
+	lineageTag: bd9110b5-ea2c-4126-8061-094c9c63ca5c
+
+	measure 'Data da Última Compra (Medida)' =
+			
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			    CALCULATE(
+			        MAX('Entradas AXIA'[DATA_ENTRADA]),
+			        FILTER(
+			            'Dim CFOP',
+			            'Dim CFOP'[CLASSIFICACAO_GERENCIAL] IN {
+			                "E2 - Compra mercadoria",
+			                "E4 - Simples remessa",
+			                "E5 - Transferência",
+			                "E6 - Bonificação"
+			            }
+			        )
+			    )
+			)
+		formatString: Short Date
+		lineageTag: 32ae21c3-dc51-494d-8185-dd923f1c5b22
+
+	measure 'Data da Última Venda (Medida)' =
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			    CALCULATE(
+			        MAX('Vendas Total AXIA'[DATA_EMISSAO])
+			    )
+			)
+		formatString: Short Date
+		lineageTag: 151415b1-c4e2-4f53-b9ac-2c7b663b2308
+
+	measure 'Dias Sem Movimentação (Medida)' =
+			
+			VAR UltimaCompra = [Data da Última Compra (Medida)]
+			VAR UltimaVenda  = [Data da Última Venda (Medida)]
+			RETURN
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			    IF(
+			        ISBLANK(UltimaCompra),
+			        0,
+			        MIN(
+			            TODAY() - UltimaCompra,
+			            TODAY() - UltimaVenda
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: 81ec890a-6065-4ab5-b253-868ebf4c31b8
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Obsolescência (Medida)' =
+			
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			IF([Dias Sem Movimentação (Medida)]<270,"Não Obsoleto","Obsoleto")
+			)
+		lineageTag: a021bd89-e857-4303-add6-55774185d208
+
+	measure 'Classificação Slow Moving (Medida)' =
+			
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			IF([DIO por Loja]<180,"<180 dias",IF(AND([DIO por Loja]>180,[DIO por Loja]<360),"Entre 180 e 360 dias",">360 dias"))
+			)
+		lineageTag: f7ead586-a5d6-41e1-96b8-fd2692883dd3
+
+	measure 'R$ Vendas CMV 12 meses' =
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			CALCULATE(
+			    SUM('Vendas Total AXIA'[VLR_CUSTO_CMV]),
+			    FILTER(
+			        'Vendas Total AXIA',
+			        'Vendas Total AXIA'[FLG_REAL_SAIDA] = "REAL SAÍDA" &&
+			        'Vendas Total AXIA'[DATA_EMISSAO] >= TODAY() - 365 &&
+			        'Vendas Total AXIA'[DATA_EMISSAO] <= TODAY()
+			    )
+			)
+			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 5143b6ce-daba-49f9-bf9b-52bd54252f12
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'QTD Vendas 12 meses' =
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			CALCULATE(
+			    SUM('Vendas Total AXIA'[QTD_AJUSTADA_OUTLIER]),
+			    FILTER(
+			        'Vendas Total AXIA',
+			        'Vendas Total AXIA'[FLG_REAL_SAIDA] = "REAL SAÍDA" &&
+			        'Vendas Total AXIA'[DATA_EMISSAO] >= TODAY() - 365 &&
+			        'Vendas Total AXIA'[DATA_EMISSAO] <= TODAY()
+			    )
+			)
+			)
+		lineageTag: a211b1b7-1096-40e5-a8e6-6aeff44b3f61
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Data da Última Compra (Geral)' =
+			
+			
+			IF(
+			    CALCULATE( MAX('Slow Moving AXIA'[VLR_ESTOQUE]) ) = 0,
+			    BLANK(),
+			    CALCULATE(
+			        MAX('Entradas AXIA'[DATA_ENTRADA])
+			        )
+			    )
+		formatString: dd/mm/yyyy
+		lineageTag: 9df3ff33-514b-4e69-bf74-6d7964dfbcc2
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column COD_FILIAL
+		lineageTag: a2d10ff1-d2bb-4417-9987-f2c045264281
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Estoque Atual AXIA[COD_FILIAL]
+		columnOrigin: 'Estoque Atual AXIA'.COD_FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PRODUTO
+		formatString: 0
+		lineageTag: 31d5e567-4240-42a8-b6e4-6a144a15529f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Estoque Atual AXIA[ID_PRODUTO]
+		columnOrigin: 'Estoque Atual AXIA'.ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLR_ESTOQUE
+		lineageTag: 01de52db-6f53-4efd-b80a-11125abc5cda
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Estoque Atual AXIA[VLR_ESTOQUE]
+		columnOrigin: 'Estoque Atual AXIA'.VLR_ESTOQUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_TOTAL
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: a0200e30-1507-4769-87dd-e17c2795fc48
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Estoque Atual AXIA[CUSTO_TOTAL]
+		columnOrigin: 'Estoque Atual AXIA'.CUSTO_TOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Data da Última Compra (Coluna)' =
+			
+			
+			CALCULATE(
+			    MAX('Entradas AXIA'[DATA_EMISSAO]),
+			    FILTER(
+			        'Entradas AXIA',
+			        'Entradas AXIA'[ID_PRODUTO] = 'Slow Moving AXIA'[ID_PRODUTO]
+			        && 'Entradas AXIA'[COD_FILIAL] = 'Slow Moving AXIA'[COD_FILIAL]
+			    )
+			)
+		formatString: Short Date
+		lineageTag: 1ee8ee41-df9b-4271-803d-a098c8aa59ec
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Data da Última Venda (Coluna)' =
+			
+			CALCULATE(
+			    MAX('Vendas Total AXIA'[DATA_EMISSAO]),
+			    FILTER(
+			        'Vendas Total AXIA',
+			        'Vendas Total AXIA'[ID_PRODUTO] = 'Slow Moving AXIA'[ID_PRODUTO]
+			        && 'Vendas Total AXIA'[CNPJ] = 'Slow Moving AXIA'[COD_FILIAL]
+			    )
+			)
+		formatString: Short Date
+		lineageTag: f0cff47c-a803-4d30-beb7-239a4eb218f1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias Sem Movimentação' =
+			
+			
+			IF('Slow Moving AXIA'[Data da Última Compra (Coluna)]<1,0,MIN(TODAY()-'Slow Moving AXIA'[Data da Última Compra (Coluna)],today()-'Slow Moving AXIA'[Data da Última Venda (Coluna)]))
+		formatString: 0
+		lineageTag: 9c0982d1-5286-44d9-8970-16aa50770249
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Obsolescência =
+			
+			
+			IF('Slow Moving AXIA'[Dias Sem Movimentação]<270,"Não Obsoleto","Obsoleto")
+		lineageTag: 310b8e36-f560-4d65-aab7-c72fbc535555
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIO =
+			
+			
+			ROUNDUP([DIO por Loja],0)
+		formatString: 0
+		lineageTag: 1fe3600d-5bee-4d21-985d-f9127d89eb9a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Classificação Slow Moving' =
+			
+			
+			IF('Slow Moving AXIA'[DIO]<180,"<180 dias",IF(AND('Slow Moving AXIA'[DIO]>180,'Slow Moving AXIA'[DIO]<360),"Entre 180 e 360 dias",">360 dias"))
+		lineageTag: 25010980-9246-4da2-a198-b837bf12d26d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Slow Moving AXIA' = calculated
+		mode: import
+		source =
+				
+				
+				SUMMARIZECOLUMNS('Estoque Atual AXIA'[COD_FILIAL],'Estoque Atual AXIA'[ID_PRODUTO],'Estoque Atual AXIA'[VLR_ESTOQUE],'Estoque Atual AXIA'[CUSTO_TOTAL],FILTER('Estoque Atual AXIA','Estoque Atual AXIA'[VLR_ESTOQUE]>0))
+
+	annotation PBI_Id = a2a0598c0b024f359e2155abe1f55449
+

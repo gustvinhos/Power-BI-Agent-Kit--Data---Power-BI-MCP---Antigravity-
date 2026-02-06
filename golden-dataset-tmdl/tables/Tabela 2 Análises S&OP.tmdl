@@ -1,0 +1,77 @@
+table 'Tabela 2 Análises S&OP'
+	lineageTag: b762daca-0240-484e-8d28-5c60fcb4792c
+
+	column 'Tabela 2 Análises S&OP'
+		lineageTag: 606d7ecb-38a2-426a-83c7-09ff05a994fa
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Tabela 2 Análises S&OP Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Tabela 2 Análises S&OP Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tabela 2 Análises S&OP Campos'
+		isHidden
+		lineageTag: fd3e98a9-57cf-40ad-9349-e9064b1a8e01
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Tabela 2 Análises S&OP Pedido'
+
+		extendedProperty ParameterMetadata = {"version":3,"kind":2}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tabela 2 Análises S&OP Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 78ae3ae7-b0b3-4cd6-98c3-3151201eb3de
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tabela 2 Análises S&OP' = calculated
+		mode: import
+		source =
+				{
+				    ("Estoque", NAMEOF([SWITCH Estoque Bruto (Análises)]), 0),
+				    ("Estoque (un)", NAMEOF('Medidas'[QTD Estoque Bruto (Análises)]), 1),
+				    ("Estoque (kg/Lt)", NAMEOF([KGLT Estoque Atual (Análises)]), 2),
+				    ("Estoque (R$)", NAMEOF('Medidas'[R$ Estoque Atual (Análises)]), 3),
+				    ("Fat. Antecipado", NAMEOF([SWITCH F. Antecipados]), 4),
+				    ("Fat. Antecipado (un)", NAMEOF('Medidas'[QTD F.Antecipados]), 5),
+				    ("Fat. Antecipado (kg/Lt)", NAMEOF([KGLT F.Antecipados]), 6),
+				    ("Fat. Antecipado (R$)", NAMEOF([R$ F.Antecipados]), 7),
+				    ("Estoque - Fat. Antecipado", NAMEOF('Medidas'[SWITCH Estoque Líquido (Análises)]), 8),
+				    ("Estoque - Fat. Antecipado (R$)", NAMEOF([R$ Estoque Liquido (Sem Compras) (Análises)]), 9),
+				    ("Pedido em Aberto", NAMEOF([SWITCH Pedidos de Compras Pendentes]), 10),
+				    ("Pedido em Aberto (un)", NAMEOF('Medidas'[QTD Pedidos de Compras Pendentes]), 11),
+				    ("Pedido em Aberto (kg/Lt)", NAMEOF([KGLT Pedidos de Compras Pendentes]), 12),
+				    ("Pedido em Aberto (R$)", NAMEOF('Medidas'[R$ Pedidos de Compras Pendentes]), 13),
+				    ("Pedido em Aberto (R$/un)", NAMEOF('Medidas'[R$ Pedidos de Compras Pendentes Unitário]), 14),
+				    ("Estoque - Fat. Antecipado + Pedidos", NAMEOF('Medidas'[SWITCH Estoque Líquido & Compras (Análises)]), 15),
+				    ("Estoque - Fat. Antecipado + Pedidos (R$)", NAMEOF('Medidas'[R$ Estoque Liquido (Análises)]), 16),
+				    ("Qtd Vendida LY (un)", NAMEOF('Medidas'[QTD Vendas Ano Anterior]), 17),
+				    ("Qtd Vendida s/ Ajuste (un)", NAMEOF([QTD Vendas (sem ajuste)]), 18),
+				    ("Qtd Vendida", NAMEOF([SWITCH Vendas]), 19),
+				    ("Qtd Vendida (un)", NAMEOF('Medidas'[QTD Vendas]), 20),
+				    ("Qtd Vendida (kg/Lt)", NAMEOF([KGLT Vendas]), 21),
+				    ("Ult 60d", NAMEOF('Medidas'[Switch Ult 60d]), 22),
+				    ("Ult 90d", NAMEOF('Medidas'[Switch Ult 90d]), 23),
+				    ("Custo Médio (R$/un)", NAMEOF('Medidas'[R$ Custo Médio Unitário]), 24),
+				    ("Custo Reposição (R$/un)", NAMEOF([Custo Reposição R$]), 25),
+				    ("CMV (R$)", NAMEOF('Medidas'[R$ Vendas CMV]), 26),
+				    ("ROB (R$)", NAMEOF('Medidas'[R$ ROB]), 27),
+				    ("30d", NAMEOF('Medidas'[Switch Prox 30d (Análises)]), 28),
+				    ("60d", NAMEOF('Medidas'[Switch Prox 60d (Análises)]), 29),
+				    ("90d", NAMEOF('Medidas'[Switch Prox 90d (Análises)]), 30),
+				    ("120d", NAMEOF('Medidas'[Switch Prox 120d (Análises)]), 31),
+				    ("150d", NAMEOF('Medidas'[Switch Prox 150d (Análises)]), 32),
+				    ("180d", NAMEOF('Medidas'[Switch Prox 180d (Análises)]), 33),
+				    ("Último Preço de Entrada (R$/un)", NAMEOF('Medidas'[Último VLR_BRUTO_UNIT_ITEM]), 34)
+				}
+
+	annotation PBI_Id = 789c19ca04134ad0ab091cec2216c10f
+

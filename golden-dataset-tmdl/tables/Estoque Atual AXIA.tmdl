@@ -1,0 +1,218 @@
+table 'Estoque Atual AXIA'
+	lineageTag: 1dc9a177-02d7-4286-903f-67a8014d580b
+
+	column COD_FILIAL
+		dataType: string
+		lineageTag: 37f9791b-41b4-42e0-b404-c04eca4cc738
+		summarizeBy: none
+		sourceColumn: COD_FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_ALOCACAO
+		dataType: string
+		lineageTag: 5834da5e-02e0-4f64-b04f-daa885ec0bb2
+		summarizeBy: none
+		sourceColumn: COD_ALOCACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_TRANSACIONAL
+		dataType: string
+		lineageTag: fde0f74c-1f71-4f17-82b7-c1c77da7f69d
+		summarizeBy: none
+		sourceColumn: COD_TRANSACIONAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_PRODUTO
+		dataType: string
+		lineageTag: ead1a1a7-2c2a-4a60-b7c2-fc16cf44b4ff
+		summarizeBy: none
+		sourceColumn: DSC_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_GRUPO
+		dataType: string
+		lineageTag: 5f36480d-f417-445d-829d-95c6ea81c501
+		summarizeBy: none
+		sourceColumn: DSC_GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO1
+		dataType: string
+		lineageTag: de3e34cb-8f46-4493-96ad-c2711b66a7de
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO1
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO2
+		dataType: string
+		lineageTag: a4550a03-6743-4cc2-bfae-43ab91a855d5
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO2
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO3
+		dataType: string
+		lineageTag: 27e52c05-c8cc-405b-9861-83206a6ab9ec
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO3
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_MARCA
+		dataType: string
+		lineageTag: a4afa1d6-2d98-4b0e-a8d4-156a2136d1f9
+		summarizeBy: none
+		sourceColumn: NOM_MARCA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLR_ESTOQUE
+		dataType: double
+		lineageTag: d1212c2d-67b3-4741-bd17-e1dec6a532e8
+		summarizeBy: sum
+		sourceColumn: VLR_ESTOQUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_MEDIO
+		dataType: double
+		lineageTag: 93a860b7-d785-4053-873b-8323e2face50
+		summarizeBy: sum
+		sourceColumn: CUSTO_MEDIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_TOTAL
+		dataType: double
+		lineageTag: 9a184650-9ae2-4b88-8f35-5094dda0102f
+		summarizeBy: sum
+		sourceColumn: CUSTO_TOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FILIAL
+		dataType: string
+		lineageTag: 7164194a-3944-4a55-bb1a-721c2e238aed
+		summarizeBy: none
+		sourceColumn: FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_INSERCAO
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bedc618c-c253-4c62-9fd1-9b784436310a
+		summarizeBy: none
+		sourceColumn: DATA_INSERCAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_POSICAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c82e31ca-c1a0-4df7-88ea-85e5021d3c73
+		summarizeBy: none
+		sourceColumn: DATA_POSICAO
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TIPO_MERCADORIA
+		dataType: string
+		lineageTag: 7fab2733-875b-472c-92fd-a7b051cb0582
+		summarizeBy: none
+		sourceColumn: TIPO_MERCADORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIGEM
+		dataType: string
+		lineageTag: a79ba4a2-42bf-48ae-971c-5596c38dd46f
+		summarizeBy: none
+		sourceColumn: ORIGEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NCM
+		dataType: string
+		lineageTag: ead289c2-6f43-407e-a024-1fb75d426413
+		summarizeBy: none
+		sourceColumn: NCM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PRODUTO
+		dataType: int64
+		formatString: 0
+		lineageTag: d5ef3cb4-0f2b-40c1-adc9-869efbd89454
+		summarizeBy: none
+		sourceColumn: ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dose UN' =
+			
+			VAR Dose_Vacina = related('Dim Produto AXIA'[Dose_Vacina])
+			
+			RETURN
+			if(Dose_Vacina="50",50,if(Dose_Vacina="25",25,if(Dose_Vacina="20",20,0)))
+		formatString: 0
+		lineageTag: 3910a2cb-1069-4a0b-851c-51d7bc2299f3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Litros/Kg = IF('Estoque Atual AXIA'[VLR_ESTOQUE]>0,RELATED('Dim Produto AXIA'[Peso]),BLANK())
+		lineageTag: 11988f40-cbc1-4671-9d10-3d153dfd70b9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_ESTOQUE_KGLT = 'Estoque Atual AXIA'[VLR_ESTOQUE]*'Estoque Atual AXIA'[Litros/Kg]
+		lineageTag: 69be3c5d-10c9-43ec-8868-51c95237eee6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_REPOSICAO
+		dataType: double
+		lineageTag: 7a88f443-ecac-41ed-a79a-0602013a22cb
+		summarizeBy: sum
+		sourceColumn: CUSTO_REPOSICAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Estoque Atual AXIA' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="select distinct * from [8_AUX].[VW_ESTOQUE_UNIFICADO] where vlr_estoque <> 0"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

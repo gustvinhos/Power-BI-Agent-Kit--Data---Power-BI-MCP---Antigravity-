@@ -1,0 +1,87 @@
+table 'Dim CFOP'
+	lineageTag: a83b25a8-7576-4d38-863e-39dcd2092827
+
+	column TIPO_DESCRICAO
+		dataType: string
+		lineageTag: 32fc949d-5a2a-4e58-875a-af796fc02aee
+		summarizeBy: none
+		sourceColumn: TIPO_DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_TIPO_OPERACAO
+		dataType: string
+		lineageTag: 2f3373e9-44e6-4d13-a611-31bd9a50651c
+		summarizeBy: none
+		sourceColumn: COD_TIPO_OPERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_CFOP
+		dataType: string
+		lineageTag: bb6498ea-63d0-4d42-b229-329aeeba8e37
+		summarizeBy: none
+		sourceColumn: DESC_CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ABREV_TIPO_VENDA
+		dataType: string
+		lineageTag: 2611a97e-cf06-4549-9534-00aa988ad7d6
+		summarizeBy: none
+		sourceColumn: ABREV_TIPO_VENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CFOP
+		dataType: string
+		lineageTag: 96a37b9a-cbe0-4998-ae47-1959bb9e5de3
+		summarizeBy: none
+		sourceColumn: CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICACAO_CFOP
+		dataType: string
+		lineageTag: b40595a3-0807-4881-9a1c-746b1985bf66
+		summarizeBy: none
+		sourceColumn: CLASSIFICACAO_CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICACAO_GERENCIAL
+		dataType: string
+		lineageTag: 443d56c1-ce2f-4636-8c65-8c99d4ad4440
+		summarizeBy: none
+		sourceColumn: CLASSIFICACAO_GERENCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_TIPOVENDA
+		dataType: string
+		lineageTag: 440115c3-3203-4d10-8956-19b42f755c70
+		summarizeBy: none
+		sourceColumn: DESCRICAO_TIPOVENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUX_CFOP_SISCOM
+		dataType: string
+		lineageTag: 2726d479-07c7-4d2d-b0ec-730540389dd7
+		summarizeBy: none
+		sourceColumn: AUX_CFOP_SISCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim CFOP' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="Select * from [8_AUX].[DIM_CFOP] where CFOP <> 0"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

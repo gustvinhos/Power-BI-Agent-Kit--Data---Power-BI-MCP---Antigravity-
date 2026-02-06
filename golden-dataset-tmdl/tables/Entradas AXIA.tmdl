@@ -1,0 +1,428 @@
+table 'Entradas AXIA'
+	lineageTag: 93c47bac-9102-4837-84b8-c56fcf66dab8
+
+	column COD_FILIAL
+		dataType: string
+		lineageTag: 25ba95ba-f3f5-4db1-8bcd-56582b064de6
+		summarizeBy: none
+		sourceColumn: COD_FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILIAL
+		dataType: string
+		lineageTag: a838c5f9-eb51-44b7-b750-f2754682314b
+		summarizeBy: none
+		sourceColumn: FILIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PEDIDO
+		dataType: string
+		lineageTag: 7a1e86ec-fd63-413c-8030-c2b46b83973b
+		summarizeBy: none
+		sourceColumn: COD_PEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUM_NF
+		dataType: string
+		lineageTag: 7e1f0ee5-d269-4ffc-b692-680012fd72ba
+		summarizeBy: none
+		sourceColumn: NUM_NF
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_SISCOM
+		dataType: string
+		lineageTag: 2c4f56b6-e2fb-43fc-b1ba-2cda6b452ef7
+		summarizeBy: none
+		sourceColumn: COD_SISCOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_TRANSACIONAL
+		dataType: string
+		lineageTag: ca0434e0-f4c0-4a0f-a2ae-cd6591886e4f
+		summarizeBy: none
+		sourceColumn: COD_TRANSACIONAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_PRODUTO
+		dataType: string
+		lineageTag: af479e0d-d94a-45b8-80bc-2f4adc2b1e71
+		summarizeBy: none
+		sourceColumn: DSC_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_GRUPO
+		dataType: string
+		lineageTag: 745947b3-c719-4393-86a7-11d4d3f43246
+		summarizeBy: none
+		sourceColumn: DSC_GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO1
+		dataType: string
+		lineageTag: b1d59a62-26c6-49aa-815f-831e7daf9ef6
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO1
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO2
+		dataType: string
+		lineageTag: 4416fde8-6d1b-4b5e-8201-83ab8e211136
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO2
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO3
+		dataType: string
+		lineageTag: 8c0f5476-e115-4dd0-9510-891754f490ff
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO3
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_FORNECEDOR
+		dataType: string
+		lineageTag: e534edd7-a014-4fd3-aeb3-5da0c9a306ef
+		summarizeBy: none
+		sourceColumn: COD_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_FORNECEDOR
+		dataType: string
+		lineageTag: e226c838-482c-466b-82d9-28a45a7195a8
+		summarizeBy: none
+		sourceColumn: NOM_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_MARCA
+		dataType: string
+		lineageTag: 4f5207e3-4d13-460b-908c-de232379c64d
+		summarizeBy: none
+		sourceColumn: NOM_MARCA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_VALIDADE
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 10258153-a114-4616-9f5e-cb3a82c9173e
+		summarizeBy: none
+		sourceColumn: DATA_VALIDADE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LOTE
+		dataType: string
+		lineageTag: eef2ef7e-9303-424d-bace-20346d5ae4cc
+		summarizeBy: none
+		sourceColumn: LOTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLR_BRUTO_ITEM
+		dataType: double
+		lineageTag: b64b4bba-0ff7-448f-b694-b439d91b663d
+		summarizeBy: sum
+		sourceColumn: VLR_BRUTO_ITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_UNIT_BRUTO_ITEM
+		dataType: double
+		lineageTag: e10fb2d5-786e-403c-bbff-af782875fdfa
+		summarizeBy: sum
+		sourceColumn: VLR_UNIT_BRUTO_ITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_PIS
+		dataType: double
+		lineageTag: 71a0938b-5abf-4079-afa6-55fb836bee66
+		summarizeBy: sum
+		sourceColumn: VLR_PIS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_COFINS
+		dataType: double
+		lineageTag: 8a7620aa-4682-429b-b166-2aa436203743
+		summarizeBy: sum
+		sourceColumn: VLR_COFINS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_ICMS
+		dataType: double
+		lineageTag: ef230dbd-8792-41a0-a21f-8a6e682ca117
+		summarizeBy: sum
+		sourceColumn: VLR_ICMS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_ICMS_RETIDO
+		dataType: double
+		lineageTag: f65223d9-1189-4f00-9ee1-d697f74dfb8d
+		summarizeBy: sum
+		sourceColumn: VLR_ICMS_RETIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_DESCONTO
+		dataType: double
+		lineageTag: 5a9f3e08-6796-4324-8689-7d0365e1cd00
+		summarizeBy: sum
+		sourceColumn: VLR_DESCONTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_IPI
+		dataType: double
+		lineageTag: 2a3facdd-8b5b-47f7-aa3a-4b3cbbf28cfe
+		summarizeBy: sum
+		sourceColumn: VLR_IPI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_FRETE
+		dataType: double
+		lineageTag: 16ced5a0-cbf0-4f02-92ad-57e25158c0f4
+		summarizeBy: sum
+		sourceColumn: VLR_FRETE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_SEGURO
+		dataType: double
+		lineageTag: 2d2bfcf1-dea0-40a7-b976-279a5e1d5cc4
+		summarizeBy: sum
+		sourceColumn: VLR_SEGURO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_DESPESAS
+		dataType: double
+		lineageTag: 37f9b48e-5ae0-4f87-8759-08bd29175820
+		summarizeBy: sum
+		sourceColumn: VLR_DESPESAS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_TOTAL_ITEM
+		dataType: double
+		lineageTag: 540c31fa-3763-41e8-ab8d-6b0dd68a0061
+		summarizeBy: sum
+		sourceColumn: VLR_TOTAL_ITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLR_UNIT_ITEM
+		dataType: double
+		lineageTag: c53b2985-6fd2-4fc4-b651-b35d001e6f7a
+		summarizeBy: sum
+		sourceColumn: VLR_UNIT_ITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QTD_DISP
+		dataType: double
+		lineageTag: d9b1bb44-3af4-47b8-8463-8feae1bf8509
+		summarizeBy: sum
+		sourceColumn: QTD_DISP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATA_EMISSAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f417da13-7718-4413-88a5-d8f7d05eef88
+		summarizeBy: none
+		sourceColumn: DATA_EMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_ENTRADA
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 4382726c-250d-4db4-8880-346e20b54616
+		summarizeBy: none
+		sourceColumn: DATA_ENTRADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_OPERACAO
+		dataType: string
+		lineageTag: 24f82cb6-fd30-48e5-b8c1-db573cbfbc35
+		summarizeBy: none
+		sourceColumn: DSC_OPERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CFOP
+		dataType: string
+		lineageTag: 47a59090-35d0-406b-a5d6-9abff1ec1c1d
+		summarizeBy: none
+		sourceColumn: CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_VENDA
+		dataType: string
+		lineageTag: 886f0d04-d17d-4414-b00f-2b3c0850649e
+		summarizeBy: none
+		sourceColumn: TIPO_VENDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIGEM
+		dataType: string
+		lineageTag: 22122fa1-8173-42dc-accb-074c998d3e05
+		summarizeBy: none
+		sourceColumn: ORIGEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PRODUTO
+		dataType: int64
+		formatString: 0
+		lineageTag: c6829eb3-9d53-4de3-a645-44498a39dbd2
+		summarizeBy: none
+		sourceColumn: ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHAVE_NFE
+		dataType: string
+		lineageTag: ea8fe4ba-68e7-4141-a986-84a3eac1ee1b
+		summarizeBy: none
+		sourceColumn: CHAVE_NFE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Peso = RELATED('Dim Produto AXIA'[Peso])
+		lineageTag: 995ee75e-a5fd-4f11-93ec-ec3b27524ce2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Litros/Kg = ('Entradas AXIA'[Peso]*'Entradas AXIA'[QTD_DISP])
+		lineageTag: fd25cb5f-ab75-41db-911d-eea752db5d39
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CNPJ_FORNECEDOR
+		dataType: string
+		lineageTag: 9fa28c41-0082-47dd-846a-1b5a682b2aa0
+		summarizeBy: none
+		sourceColumn: CNPJ_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data da Última Compra' =
+			
+			
+			CALCULATE(
+			    MAX('Entradas Axia'[DATA_ENTRADA]),
+			    FILTER(
+			        'Entradas Axia',
+			        'Entradas Axia'[ID_PRODUTO] = EARLIER('Entradas Axia'[ID_PRODUTO]) &&
+			        'Entradas Axia'[COD_FILIAL] = EARLIER('Entradas Axia'[COD_FILIAL])
+			    )
+			)
+		formatString: Short Date
+		lineageTag: b2de29f2-3028-4a1b-b0d8-31ce66fe8e2b
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Data da Última Venda' =
+			
+			CALCULATE(
+			    MAX('Vendas Total AXIA'[DATA_EMISSAO]),
+			    FILTER(
+			        'Vendas Total AXIA',
+			        'Vendas Total AXIA'[ID_PRODUTO] = 'Entradas Axia'[ID_PRODUTO] &&
+			        'Vendas Total AXIA'[CNPJ] = 'Entradas Axia'[COD_FILIAL]
+			    )
+			)
+		formatString: Short Date
+		lineageTag: 7cac95cf-8be1-47b6-9255-efffbb370841
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DESC_CFOP
+		dataType: string
+		lineageTag: c91578df-244b-4b6c-8af4-5fe4a2f4d0de
+		summarizeBy: none
+		sourceColumn: DESC_CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Entradas AXIA' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="select * from [8_AUX].[VW_MOVIMENTACOES_ENTRADA_AXIA]"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

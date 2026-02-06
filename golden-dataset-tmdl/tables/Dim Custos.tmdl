@@ -1,0 +1,44 @@
+table 'Dim Custos'
+	lineageTag: 8a0971af-4a40-4e16-89ae-968783756aaf
+
+	column ID_PRODUTO
+		formatString: 0
+		lineageTag: b957ab59-3e69-4250-80d0-9b3cae74244d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Estoque Atual AXIA[ID_PRODUTO]
+		columnOrigin: 'Estoque Atual AXIA'.ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTO_REPOSICAO
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 90e3120d-b60a-4137-8531-50de4b3f04a0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Custo_Reposicao]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition 'Dim Custos' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE (
+				    FILTER (
+				        'Estoque Atual AXIA',
+				        NOT ISBLANK ( 'Estoque Atual AXIA'[CUSTO_REPOSICAO] )
+				    ),
+				    'Estoque Atual AXIA'[ID_PRODUTO],
+				    "CUSTO_REPOSICAO",
+				        IF(
+				            MAX ('Estoque Atual AXIA'[CUSTO_REPOSICAO])>0.3*AVERAGE('Estoque Atual AXIA'[CUSTO_REPOSICAO]),
+				            AVERAGE('Estoque Atual AXIA'[CUSTO_REPOSICAO]),
+				            MAX ('Estoque Atual AXIA'[CUSTO_REPOSICAO])
+				        )
+				)
+
+	annotation PBI_Id = bded34e02b6d479c909a76a7a7afe617
+

@@ -1,0 +1,59 @@
+table 'Dim Pricing AXIA'
+	lineageTag: 684196db-44a1-44b9-a5bc-2a2c5deb00b0
+
+	column cod_filial
+		dataType: string
+		lineageTag: 4bfcef5c-d613-4162-a886-0bc915ebf480
+		summarizeBy: none
+		sourceColumn: cod_filial
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_produto
+		dataType: int64
+		formatString: 0
+		lineageTag: e95e3aae-b9d6-4a2a-8d80-2d5511a0fbbf
+		summarizeBy: none
+		sourceColumn: id_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column custo_medio
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 7c58cc6e-f88e-47f9-8e8a-c298e7f968b0
+		summarizeBy: sum
+		sourceColumn: custo_medio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Produto Principal' =
+			
+			RELATED('Dim Produto AXIA'[Produto Principal])
+		lineageTag: 545e6be9-f47b-4d7d-8691-b5f05db085a0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Filial Planejamento' =
+			
+			RELATED('Dim Filiais AXIA'[Filial_planejamento])
+		lineageTag: 0880388b-45aa-46c9-82ba-d3f45c6ab8a1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Pricing AXIA' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="select * from [8_AUX].[DIM_PRICING_AXIA]"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

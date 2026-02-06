@@ -1,0 +1,186 @@
+table Compras
+	lineageTag: 950e0464-8754-47ef-b7bc-ff64a7ee41ab
+
+	column DATA_POSICAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 99f16bd0-9896-4dfb-bb41-27c8c20c27b1
+		summarizeBy: none
+		sourceColumn: DATA_POSICAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NUM_PEDIDO
+		dataType: string
+		lineageTag: 10440165-b281-4971-a7ee-31358a91fb79
+		summarizeBy: none
+		sourceColumn: NUM_PEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PRODUTO
+		dataType: string
+		lineageTag: 35c6e55d-2650-4b18-8a3f-c96542651cab
+		summarizeBy: none
+		sourceColumn: ID_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPJ
+		dataType: string
+		lineageTag: 7fc915d3-d8bb-4fd3-a1e0-96c1955ff124
+		summarizeBy: none
+		sourceColumn: CNPJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_EMISSAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 42442da4-c177-41c3-8cfc-56917a427b81
+		summarizeBy: none
+		sourceColumn: DATA_EMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATA_PREV_ENTREGA
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 204028a5-c2dd-4772-b1b4-418c5c1095d9
+		summarizeBy: none
+		sourceColumn: DATA_PREV_ENTREGA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATA_SEM_FECHAMENTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7df43efb-db89-4837-8df3-02ee723acfb2
+		summarizeBy: sum
+		sourceColumn: DATA_SEM_FECHAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_FORNECEDOR
+		dataType: string
+		lineageTag: 005f450d-b593-45c9-8af2-1f8c017b7bda
+		summarizeBy: none
+		sourceColumn: NOME_FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS_OBS_UNIFICADO
+		dataType: string
+		lineageTag: ab2fcbb7-3c35-43d2-abe6-e64464aa784f
+		summarizeBy: none
+		sourceColumn: STATUS_OBS_UNIFICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESP_LANCAMENTO
+		dataType: string
+		lineageTag: 621eca56-e8f6-4f1b-aaea-c3e10ce9d152
+		summarizeBy: none
+		sourceColumn: RESP_LANCAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_COMPRA
+		dataType: string
+		lineageTag: 925ca631-a522-47f7-8d0b-47595878f481
+		summarizeBy: none
+		sourceColumn: TIPO_COMPRA
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS_ATRASO
+		dataType: string
+		lineageTag: 20cb60a0-5bd4-48d0-b50b-64627d7098b6
+		summarizeBy: none
+		sourceColumn: STATUS_ATRASO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_PENDENTE_FINAL
+		dataType: double
+		lineageTag: 1bb70a8b-92d8-4d55-9499-837977bae946
+		summarizeBy: sum
+		sourceColumn: QTD_PENDENTE_FINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KGLT_PENDENTE_FINAL
+		dataType: double
+		lineageTag: 809aaddf-b3cb-44f7-8da7-0cecb0c00170
+		summarizeBy: sum
+		sourceColumn: KGLT_PENDENTE_FINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_PENDENTE_FINAL
+		dataType: double
+		lineageTag: 7e5d3f70-36c8-420e-b91c-3d266468e212
+		summarizeBy: sum
+		sourceColumn: CUSTO_PENDENTE_FINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONC_COMPRAS = CONCATENATE(CONCATENATE(Compras[NUM_PEDIDO],Compras[CNPJ]),Compras[ID_PRODUTO])
+		lineageTag: d1e024b2-0e3d-4c9e-aff1-7e505a2fd3ef
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS =
+			CALCULATE (
+			    SELECTEDVALUE ('Pedidos de Compras AXIA'[STATUS_OBS_UNIFICADO] )
+			)
+		lineageTag: de13e3ad-8c74-482e-959c-d157ea62f316
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Compras = m
+		mode: import
+		source =
+				let
+				    Fonte = SharePoint.Contents("https://agroopps.sharepoint.com/sites/AgrolineCorporativo", [ApiVersion = 15]),
+				    #"Documentos Partilhados" = Fonte{[Name="Documentos Partilhados"]}[Content],
+				    Coleta_Compras = #"Documentos Partilhados"{[Name="Coleta_Compras"]}[Content],
+				    ArquivoCSV = Table.SelectRows(Coleta_Compras, each Text.EndsWith([Name], ".csv")),
+				    ConteudoCSV = Table.AddColumn(ArquivoCSV, "Dados", each Csv.Document([Content], [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.None])),
+				    #"Dados Expandido" = Table.ExpandTableColumn(ConteudoCSV, "Dados", {"Column1"}, {"Dados.Column1"}),
+				    #"Dividir Coluna por Delimitador" = Table.SplitColumn(#"Dados Expandido", "Dados.Column1", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), {"Dados.Column1.1", "Dados.Column1.2", "Dados.Column1.3", "Dados.Column1.4", "Dados.Column1.5", "Dados.Column1.6", "Dados.Column1.7", "Dados.Column1.8","Dados.Column1.9","Dados.Column1.10","Dados.Column1.11","Dados.Column1.12","Dados.Column1.13","Dados.Column1.14"}),
+				    #"Linhas Superiores Removidas" = Table.Skip(#"Dividir Coluna por Delimitador",1),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Linhas Superiores Removidas",{"Content", "Extension", "Date accessed", "Date modified", "Date created", "Attributes", "Folder Path"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Removidas", { {"Dados.Column1.1",  "NUM_PEDIDO"}, {"Dados.Column1.2",  "ID_PRODUTO"}, {"Dados.Column1.3",  "CNPJ"}, {"Dados.Column1.4",  "DATA_EMISSAO"}, {"Dados.Column1.5",  "DATA_PREV_ENTREGA"}, {"Dados.Column1.6",  "DATA_SEM_FECHAMENTO"}, {"Dados.Column1.7",  "NOME_FORNECEDOR"}, {"Dados.Column1.8",  "STATUS_OBS_UNIFICADO"}, {"Dados.Column1.9",  "RESP_LANCAMENTO"}, {"Dados.Column1.10", "TIPO_COMPRA"}, {"Dados.Column1.11", "STATUS_ATRASO"}, {"Dados.Column1.12", "QTD_PENDENTE_FINAL"}, {"Dados.Column1.13", "KGLT_PENDENTE_FINAL"}, {"Dados.Column1.14", "CUSTO_PENDENTE_FINAL"} } ),
+				    #"Texto Extraído Entre os Delimitadores" = Table.TransformColumns(#"Colunas Renomeadas", {{"Name", each Text.BetweenDelimiters(_, "Compras_", ".csv"), type text}}),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Texto Extraído Entre os Delimitadores",{{"Name", "DATA_POSICAO"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas1",{{"KGLT_PENDENTE_FINAL", type text}}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Tipo Alterado",".",",",Replacer.ReplaceText,{"QTD_PENDENTE_FINAL"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído",".",",",Replacer.ReplaceText,{"KGLT_PENDENTE_FINAL"}),
+				    #"Valor Substituído2" = Table.ReplaceValue(#"Valor Substituído1",".",",",Replacer.ReplaceText,{"CUSTO_PENDENTE_FINAL"}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Valor Substituído2",{{"QTD_PENDENTE_FINAL", type number}, {"KGLT_PENDENTE_FINAL", type number}, {"CUSTO_PENDENTE_FINAL", type number}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Tipo Alterado1", each not Text.Contains([NUM_PEDIDO], "NUM_PEDIDO")),
+				    #"Valor Substituído3" = Table.ReplaceValue(#"Linhas Filtradas","T00:00:00","",Replacer.ReplaceText,{"DATA_EMISSAO"}),
+				    #"Valor Substituído4" = Table.ReplaceValue(#"Valor Substituído3","T00:00:00","",Replacer.ReplaceText,{"DATA_PREV_ENTREGA"}),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Valor Substituído4",{{"DATA_PREV_ENTREGA", type date}, {"DATA_EMISSAO", type date}, {"DATA_SEM_FECHAMENTO", Int64.Type}, {"DATA_POSICAO", type date}})
+				in
+				    #"Tipo Alterado2"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

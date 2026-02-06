@@ -1,0 +1,57 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Erros nas consultas que foram carregadas em 29/05/2025 17:57:12.
+queryGroup 'Erros na Consulta - 29/05/2025 17:57:12'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Erros nas consultas que foram carregadas em 06/11/2025 12:54:30.
+queryGroup 'Erros na Consulta - 06/11/2025 12:54:30'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Transformar Arquivo de Consulta1'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Estoque Histórico AXIA","Solicitações de Compras AXIA","Dim Produto AXIA","Dim Filiais AXIA","Faturamentos Antecipados AXIA","Estoque Atual AXIA","Entradas AXIA","Pedidos de Compras AXIA","Dim Grupo Financeiro","Dim CFOP","Estoque Vencimentos AXIA","Dim Pricing AXIA","Vendas Total AXIA","Compras","Parâmetro1","Transformar o Arquivo de Exemplo","Arquivo de Amostra","Transformar Arquivo","Tabela Rupturas NL","Ruptura Diário"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table 'Estoque Histórico AXIA'
+ref table 'Solicitações de Compras AXIA'
+ref table 'Dim Produto AXIA'
+ref table 'Dim Filiais AXIA'
+ref table 'Faturamentos Antecipados AXIA'
+ref table 'Estoque Atual AXIA'
+ref table 'Dim Calendário'
+ref table 'Entradas AXIA'
+ref table 'Pedidos de Compras AXIA'
+ref table Medidas
+ref table 'Dim Grupo Financeiro'
+ref table 'Dim CFOP'
+ref table 'Estoque Vencimentos AXIA'
+ref table 'Dim Pricing AXIA'
+ref table 'Slow Moving AXIA'
+ref table 'Vendas Total AXIA'
+ref table 'Tabela 1 Análises S&OP'
+ref table 'Tabela 2 Análises S&OP'
+ref table 'Parâmetro Rupturas'
+ref table PerfisColunas
+ref table Compras
+ref table 'Tabela Rupturas NL'
+ref table 'Ruptura Diário'
+ref table 'Dim Custos'
+
+ref cultureInfo pt-BR
+

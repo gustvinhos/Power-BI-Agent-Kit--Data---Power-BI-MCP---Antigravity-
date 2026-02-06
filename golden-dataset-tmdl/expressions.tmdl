@@ -1,0 +1,40 @@
+expression Parâmetro1 = #"Arquivo de Amostra" meta [IsParameterQuery=true, BinaryIdentifier=#"Arquivo de Amostra", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 78d52a77-96a7-4929-88b9-7a3853fb74e3
+	queryGroup: 'Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar o Arquivo de Exemplo' =
+		let
+		    Fonte = Pdf.Tables(Parâmetro1, [Implementation="1.3"])
+		in
+		    Fonte
+	lineageTag: de7b82fd-630e-4cba-b1ef-9b7b4a7f4a37
+	queryGroup: 'Transformar Arquivo de Consulta1'
+
+	annotation PBI_ResultType = Table
+
+expression 'Arquivo de Amostra' =
+		let
+		    Fonte = SharePoint.Files("https://agroopps.sharepoint.com/sites/AgrolineCorporativo", [ApiVersion = 15]),
+		    Navegação1 = Fonte{0}[Content]
+		in
+		    Navegação1
+	lineageTag: 3bdb3b6e-e4e4-42cd-83dc-2fdb72abaf06
+	queryGroup: 'Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar Arquivo' =
+		let
+		    Fonte = (Parâmetro1 as binary) => let
+		    Fonte = Pdf.Tables(Parâmetro1, [Implementation="1.3"])
+		in
+		    Fonte
+		in
+		    Fonte
+	lineageTag: 389f53af-7ea0-476d-bd2b-8b12eb577e19
+	queryGroup: 'Transformar Arquivo de Consulta1\Consultas Auxiliares'
+
+	annotation PBI_ResultType = Function
+

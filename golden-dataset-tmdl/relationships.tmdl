@@ -1,0 +1,156 @@
+relationship b77bd9bb-7743-ecf7-9df3-a061c5a05d0a
+	fromColumn: 'Solicitações de Compras AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 5cddf835-9601-ecce-0913-6a3a0548ede7
+	fromColumn: 'Estoque Histórico AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship AutoDetected_0f73060e-8f71-47c7-87ce-f90e8c39667e
+	fromColumn: 'Estoque Histórico AXIA'.CNPJ
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship AutoDetected_f7c69636-cf74-4c02-a0e9-774b2cf6c287
+	fromColumn: 'Faturamentos Antecipados AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship AutoDetected_d815a9bc-335f-4da8-81fa-5529e62649f7
+	fromColumn: 'Faturamentos Antecipados AXIA'.CNPJ
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship AutoDetected_4034ae5c-5901-40f8-9026-81b9684ddce5
+	fromColumn: 'Estoque Atual AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 9259a9c7-9cad-460c-2983-71b0c4664668
+	fromColumn: 'Estoque Atual AXIA'.COD_FILIAL
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship a6d4d4b4-e763-ec53-ae05-5edea7167fe0
+	fromColumn: 'Solicitações de Compras AXIA'.COD_FILIAL
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship AutoDetected_ffdd14f4-659b-4fe6-a2a4-0a2b0b775a96
+	fromColumn: 'Pedidos de Compras AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship AutoDetected_d08a178f-0714-4cd3-a9fe-25ed934b4052
+	fromColumn: 'Pedidos de Compras AXIA'.CNPJ
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship 78d3850f-4597-83a6-891c-fd620b754027
+	fromColumn: 'Entradas AXIA'.COD_FILIAL
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship 3bd14809-60c5-ba02-620a-b1be4f97b9b2
+	fromColumn: 'Entradas AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship f08f79aa-3f7c-5427-7478-f5458b62fccc
+	fromColumn: 'Dim Produto AXIA'.Dsc_Grupo
+	toColumn: 'Dim Grupo Financeiro'.DSC_GRUPO_LOJAS
+
+relationship e78e2651-088b-eb2f-936a-0097158ea3b4
+	fromColumn: 'Entradas AXIA'.CFOP
+	toColumn: 'Dim CFOP'.CFOP
+
+relationship AutoDetected_2bf38ae8-6ce1-48ff-b3d3-3aef6ba2245b
+	fromColumn: 'Estoque Vencimentos AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 8a58b903-df88-24cc-5c0b-d9b3200c3e53
+	fromColumn: 'Estoque Vencimentos AXIA'.CNPJ_LOJA
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship 5fae3628-5a16-68bb-21e8-e5ac84cf3067
+	fromColumn: 'Dim Pricing AXIA'.cod_filial
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship fa149305-844b-46f3-b545-6f4d07b01af7
+	fromColumn: 'Dim Pricing AXIA'.id_produto
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 08756a8c-dbbb-f4c2-3553-1b9cfc4fef1b
+	fromColumn: 'Slow Moving AXIA'.COD_FILIAL
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship 7d5dc465-d2e0-1e69-aaea-5c29a7a61800
+	fromColumn: 'Slow Moving AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship AutoDetected_0ffe3de6-b22e-4aff-96f2-dba371a6b13d
+	fromColumn: 'Vendas Total AXIA'.CFOP
+	toColumn: 'Dim CFOP'.CFOP
+
+relationship e23621c9-cbd5-1b15-9830-e0c6e3ca9a0f
+	fromColumn: 'Vendas Total AXIA'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 45a3956c-4f67-d2b6-8527-cbe0fd029138
+	fromColumn: 'Vendas Total AXIA'.COD_FILIAL_AGENCIAMENTO
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship ddef806b-30b4-8e32-3e0c-000134a8194f
+	isActive: false
+	fromColumn: 'Faturamentos Antecipados AXIA'.DATA_EMISSAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship 64748f52-d79e-3042-331c-1d94ebe37840
+	fromColumn: 'Estoque Histórico AXIA'.DATA_POSICAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship aa048850-c19c-cf21-f84a-e416faa1826f
+	isActive: false
+	fromColumn: 'Estoque Atual AXIA'.DATA_INSERCAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship dbb9c423-b9a2-2131-924e-00d18fff5980
+	fromColumn: 'Solicitações de Compras AXIA'.DATA_SOLICITACAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship 23b2048d-d22f-ba91-96f8-0bdc1d1c660d
+	fromColumn: 'Entradas AXIA'.DATA_EMISSAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship bd197636-5631-2049-67a7-12ada0b587ba
+	fromColumn: 'Estoque Vencimentos AXIA'.DATA_VALIDADE
+	toColumn: 'Dim Calendário'.Date
+
+relationship 772f8a30-d7a1-3fa7-2d3b-7fdcfee422b9
+	fromColumn: 'Vendas Total AXIA'.DATA_EMISSAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship 5132bb57-93b8-0988-134c-9f1d0b604660
+	fromColumn: 'Estoque Vencimentos AXIA'.Vencimento
+	toColumn: Medidas.Vencimento
+
+relationship 245b4f9f-2b93-492e-0c17-0b885de0d526
+	fromColumn: 'Slow Moving AXIA'.'Classificação Slow Moving'
+	toColumn: Medidas.'Slow Moving'
+
+relationship AutoDetected_db2db40e-4ba4-45ee-9418-d5d3762f7bde
+	fromColumn: Compras.CNPJ
+	toColumn: 'Dim Filiais AXIA'.CNPJ
+
+relationship cc6d1671-c2c3-275e-81aa-311fb8cc9951
+	fromColumn: Compras.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 5ca9c8eb-8c7a-1d5b-92f0-f9a21fe25bd4
+	fromColumn: Compras.DATA_POSICAO
+	toColumn: 'Dim Calendário'.Date
+
+relationship a10f4ab8-2548-feeb-5a8b-f096876b77e4
+	toCardinality: many
+	fromColumn: 'Pedidos de Compras AXIA'.CONC_COMPRAS
+	toColumn: Compras.CONC_COMPRAS
+
+relationship 849a637e-23bc-d5a2-0eea-bbdb10769626
+	fromColumn: 'Dim Custos'.ID_PRODUTO
+	toColumn: 'Dim Produto AXIA'.ID_Produto
+
+relationship 9d44379c-d124-7b89-d699-fc5f44c5a3fd
+	toCardinality: many
+	fromColumn: 'Tabela 2 Análises S&OP'.'Tabela 2 Análises S&OP'
+	toColumn: PerfisColunas.Parametro
+

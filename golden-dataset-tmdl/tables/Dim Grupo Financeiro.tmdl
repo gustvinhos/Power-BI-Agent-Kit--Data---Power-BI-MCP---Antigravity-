@@ -1,0 +1,49 @@
+table 'Dim Grupo Financeiro'
+	lineageTag: d0d12d7a-0476-499a-a4c9-1b844a95715a
+
+	column DSC_GRUPO_LOJAS
+		dataType: string
+		lineageTag: 864c53c0-913b-4502-9524-e4c242dad83f
+		summarizeBy: none
+		sourceColumn: DSC_GRUPO_LOJAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_GRUPO_UNIFICADO
+		dataType: string
+		lineageTag: 8e2d56fe-8428-417a-a68b-623e8522af20
+		summarizeBy: none
+		sourceColumn: DSC_GRUPO_UNIFICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FINANCEIRO
+		dataType: string
+		lineageTag: 013de173-3d82-4947-9817-368f5ec065ec
+		summarizeBy: none
+		sourceColumn: ID_FINANCEIRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 15075b89-46b8-4e91-a6f2-25aef6026789
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Grupo Financeiro' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="select * from [8_AUX].[DIM_RELACAO_GRUPO_UNIFICADO]"]),
+				    #"Colocar Cada Palavra Em Maiúscula" = Table.TransformColumns(Fonte,{{"ID_FINANCEIRO", Text.Proper, type text}})
+				in
+				    #"Colocar Cada Palavra Em Maiúscula"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

@@ -1,0 +1,249 @@
+table 'Tabela Rupturas NL'
+	lineageTag: 5bc87fb3-b840-477e-b0c0-e039c91a5e12
+
+	column DSC_GRUPO
+		dataType: string
+		lineageTag: da8681ab-2e97-4aa6-b04e-9121000f9bd0
+		summarizeBy: none
+		sourceColumn: DSC_GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO1
+		dataType: string
+		lineageTag: 58f79f91-84d1-4fea-8e4a-46f3c45ab8d9
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO1
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSC_SUBGRUPO2
+		dataType: string
+		lineageTag: 2ae3379b-a3d7-4413-8262-b934e6022142
+		summarizeBy: none
+		sourceColumn: DSC_SUBGRUPO2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASSIFICACAO_QBR
+		dataType: string
+		lineageTag: 8bf0e01b-fd45-4184-86f7-e35caede9090
+		summarizeBy: none
+		sourceColumn: CLASSIFICACAO_QBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUTO_FINAL
+		dataType: string
+		lineageTag: c4b22d84-a9d6-45bd-878e-40396348b3e6
+		summarizeBy: none
+		sourceColumn: PRODUTO_FINAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURVA_PRODUTO
+		dataType: string
+		lineageTag: 7385fe8f-e7a1-4013-8298-8ee97a32f46e
+		summarizeBy: none
+		sourceColumn: CURVA_PRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUTO_FAT_ANTECIPADO
+		dataType: string
+		lineageTag: 268dc172-12db-434a-bfa0-8a20cff96c92
+		summarizeBy: none
+		sourceColumn: PRODUTO_FAT_ANTECIPADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMPRESA
+		dataType: string
+		lineageTag: 1ecff864-b947-49d1-aa19-5439d6060bbe
+		summarizeBy: none
+		sourceColumn: EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILIAL_PLANEJAMENTO
+		dataType: string
+		lineageTag: 3e8f96a3-b2e1-4195-b7e2-d7c3fe35520d
+		summarizeBy: none
+		sourceColumn: FILIAL_PLANEJAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILIAL_FAT_ANTECIPADO
+		dataType: string
+		lineageTag: 57962572-1f8c-4585-8890-fa4c756dbea5
+		summarizeBy: none
+		sourceColumn: FILIAL_FAT_ANTECIPADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column UND_MEDIDA_DFU
+		dataType: string
+		lineageTag: 522683e6-5d0f-4a59-ab20-94078c99632a
+		summarizeBy: none
+		sourceColumn: UND_MEDIDA_DFU
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTO_MEDIO
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 6c73f601-5e9b-4215-af4c-8a78079c93cc
+		summarizeBy: sum
+		sourceColumn: CUSTO_MEDIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column CUSTO_FAT_ANTECIPADO
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: ba1b098b-a88c-4947-9f17-89e553dc53e1
+		summarizeBy: sum
+		sourceColumn: CUSTO_FAT_ANTECIPADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column QUANTIDADE_FAT_ANTECIPADO
+		dataType: double
+		lineageTag: 029dd8d4-d285-438f-bfc0-2092e925c89f
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE_FAT_ANTECIPADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTIDADE_ESTOQUE
+		dataType: double
+		lineageTag: 84b21c0c-b15d-4694-a925-2cde6ed31f4a
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE_ESTOQUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTIDADE_15D
+		dataType: double
+		lineageTag: e07eb33d-fe52-49d0-b2ab-bb59823ed579
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE_15D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTIDADE_30D
+		dataType: double
+		lineageTag: 5aa99c69-9cf3-43da-9f43-7c5f6d21891c
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE_30D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RUPTURA_DIARIA
+		dataType: double
+		lineageTag: 0cebd0a2-8f18-43ed-b7de-5da53d114c4e
+		summarizeBy: sum
+		sourceColumn: RUPTURA_DIARIA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_RUPTURA_DIARIA
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 17b1ce99-bcbf-4b3e-b180-cf65670623b9
+		summarizeBy: sum
+		sourceColumn: CUSTO_RUPTURA_DIARIA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column RUPTURA_15
+		dataType: double
+		lineageTag: 23ba67e8-b3dd-4e64-9c62-e3f9b5917934
+		summarizeBy: sum
+		sourceColumn: RUPTURA_15
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RUPTURA_30
+		dataType: double
+		lineageTag: c482be57-a8ce-4255-ad1d-74331c38d9ac
+		summarizeBy: sum
+		sourceColumn: RUPTURA_30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RUPTURA_30D_CUSTO
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: ad4f6531-7403-44be-8b09-bd4741f2e165
+		summarizeBy: sum
+		sourceColumn: RUPTURA_30D_CUSTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column RUPTURA_15D_CUSTO
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 431ac241-e30d-4f4c-b97c-0fa1eb45451e
+		summarizeBy: sum
+		sourceColumn: RUPTURA_15D_CUSTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column QUANTIDADE_PEDIDO_ABERTO
+		dataType: double
+		lineageTag: 3120b2ac-363d-4dcf-a0fe-3d9bca702958
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE_PEDIDO_ABERTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTO_PEDIDO_ABERTO
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 6109eee4-f6e6-444c-b532-79ff39ebb5d9
+		summarizeBy: sum
+		sourceColumn: CUSTO_PEDIDO_ABERTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition 'Tabela Rupturas NL' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("agroops.database.windows.net", "axiapool", [Query="SELECT * FROM [8_AUX].[TBL_RUPTURA_NL]"])
+				in
+				    Fonte
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

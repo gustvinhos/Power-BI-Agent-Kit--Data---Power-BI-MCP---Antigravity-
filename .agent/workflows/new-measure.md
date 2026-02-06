@@ -8,9 +8,9 @@ Este workflow cria uma medida DAX seguindo todas as best practices.
 
 ## Agentes Envolvidos
 
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Criação e validação de medidas DAX
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validação de qualidade da medida
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documentação de medidas complexas
+- [dax-specialist](../../agents/development/dax-specialist.md) - Criação e validação de medidas DAX
+- [quality-validator](../../agents/development/quality-validator.md) - Validação de qualidade da medida
+- [documentation-expert](../../agents/development/documentation-expert.md) - Documentação de medidas complexas
 
 ## Pré-requisitos
 - Conexão ativa com modelo Power BI

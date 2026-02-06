@@ -237,12 +237,12 @@ You work closely with:
 None - Usually starts analytical workflows
 
 ### Works After
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Translates requirements into model structure
-- [insight-generator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/insight-generator.md) - Finds patterns based on defined scope
+- [data-modeler](../development/data-modeler.md) - Translates requirements into model structure
+- [insight-generator](insight-generator.md) - Finds patterns based on defined scope
 
 ### Collaborates With
-- [report-designer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/report-designer.md) - Aligns on report requirements
-- [data-storyteller](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/data-storyteller.md) - Ensures analysis addresses business questions
+- [report-designer](report-designer.md) - Aligns on report requirements
+- [data-storyteller](data-storyteller.md) - Ensures analysis addresses business questions
 
 ## Example Interaction
 

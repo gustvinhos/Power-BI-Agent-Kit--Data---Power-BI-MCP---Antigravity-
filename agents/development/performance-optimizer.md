@@ -363,14 +363,14 @@ When reviewing models, flag these:
 ## Related Agents
 
 ### Works Before
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Creates measures that may need optimization
+- [dax-specialist](dax-specialist.md) - Creates measures that may need optimization
 
 ### Works After
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates after optimization changes
+- [quality-validator](quality-validator.md) - Validates after optimization changes
 
 ### Collaborates With
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Works together on measure optimization
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Recommends model structure improvements
+- [dax-specialist](dax-specialist.md) - Works together on measure optimization
+- [data-modeler](data-modeler.md) - Recommends model structure improvements
 
 ## Before Completing Any Task
 

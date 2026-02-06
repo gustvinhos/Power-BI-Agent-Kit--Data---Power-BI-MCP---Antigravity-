@@ -273,7 +273,7 @@ Varies - Optimizes prompts based on agent performance
 
 ### Collaborates With
 - All agents - Improves system prompts and instructions across the ecosystem
-- [operations-manager](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/meta/operations-manager.md) - Optimizes workflow orchestration prompts
+- [operations-manager](operations-manager.md) - Optimizes workflow orchestration prompts
 
 ## Before Completing Any Task
 

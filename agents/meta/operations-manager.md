@@ -271,7 +271,7 @@ Varies depending on workflow
 
 ### Collaborates With
 - All specialized agents - Coordinates and delegates tasks across the entire agent ecosystem
-- [migration-planner](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/migration/migration-planner.md) - Coordinates complex migrations
+- [migration-planner](../migration/migration-planner.md) - Coordinates complex migrations
 
 ## Before Completing Any Coordination
 

@@ -312,14 +312,14 @@ You work closely with:
 ## Related Agents
 
 ### Works Before
-- [insight-generator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/insight-generator.md) - Provides insights to visualize
+- [insight-generator](insight-generator.md) - Provides insights to visualize
 
 ### Works After
-- [data-storyteller](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/data-storyteller.md) - Creates narrative around visuals
+- [data-storyteller](data-storyteller.md) - Creates narrative around visuals
 
 ### Collaborates With
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Implements measures for visuals
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - Aligns on content requirements
+- [dax-specialist](../development/dax-specialist.md) - Implements measures for visuals
+- [business-analyst](business-analyst.md) - Aligns on content requirements
 
 ## Example Interaction
 

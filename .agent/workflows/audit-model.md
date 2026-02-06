@@ -8,12 +8,12 @@ Este workflow executa uma auditoria completa do modelo Power BI, validando quali
 
 ## Agentes Envolvidos
 
-- [model_operations](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Verificação de estrutura do modelo
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Auditoria de nomenclatura e validação de qualidade
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Validação de relacionamentos
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Auditoria de medidas
-- [performance-optimizer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/performance-optimizer.md) - Testes de performance
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Verificação de colunas calculadas
+- [model_operations](../../agents/development/data-modeler.md) - Verificação de estrutura do modelo
+- [quality-validator](../../agents/development/quality-validator.md) - Auditoria de nomenclatura e validação de qualidade
+- [relationship-architect](../../agents/development/relationship-architect.md) - Validação de relacionamentos
+- [dax-specialist](../../agents/development/dax-specialist.md) - Auditoria de medidas
+- [performance-optimizer](../../agents/development/performance-optimizer.md) - Testes de performance
+- [data-modeler](../../agents/development/data-modeler.md) - Verificação de colunas calculadas
 
 ## Pré-requisitos
 - Conexão ativa com modelo Power BI

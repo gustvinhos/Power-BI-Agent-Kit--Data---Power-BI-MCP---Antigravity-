@@ -8,12 +8,12 @@ Este workflow migra medidas de um modelo antigo para um novo modelo Power BI.
 
 ## Agentes Envolvidos
 
-- [migration-planner](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/migration/migration-planner.md) - Planejamento e análise de dependências
-- [migration-executor](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/migration/migration-executor.md) - Execução da migração e validação
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Preparação do modelo de destino
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Refatoração e organização de medidas
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validação final das medidas migradas
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Exportação e documentação
+- [migration-planner](../../agents/migration/migration-planner.md) - Planejamento e análise de dependências
+- [migration-executor](../../agents/migration/migration-executor.md) - Execução da migração e validação
+- [data-modeler](../../agents/development/data-modeler.md) - Preparação do modelo de destino
+- [dax-specialist](../../agents/development/dax-specialist.md) - Refatoração e organização de medidas
+- [quality-validator](../../agents/development/quality-validator.md) - Validação final das medidas migradas
+- [documentation-expert](../../agents/development/documentation-expert.md) - Exportação e documentação
 
 ## Pré-requisitos
 - Conexão com modelo de ORIGEM

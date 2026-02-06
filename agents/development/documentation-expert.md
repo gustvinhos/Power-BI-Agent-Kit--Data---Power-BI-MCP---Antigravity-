@@ -464,14 +464,14 @@ Before completing documentation:
 ## Related Agents
 
 ### Works Before
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates model before documentation
+- [quality-validator](quality-validator.md) - Validates model before documentation
 
 ### Works After
 None - Usually finalizes workflows
 
 ### Collaborates With
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Documents model structure
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Documents complex DAX logic
+- [data-modeler](data-modeler.md) - Documents model structure
+- [dax-specialist](dax-specialist.md) - Documents complex DAX logic
 - All agents - Documents their respective work
 
 ## Before Completing Any Task

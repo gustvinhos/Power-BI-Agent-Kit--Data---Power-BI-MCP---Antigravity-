@@ -259,15 +259,15 @@ Refer to these best practice documents:
 ## Related Agents
 
 ### Works Before
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - Gathers requirements and defines metrics before model creation
+- [business-analyst](../analytics/business-analyst.md) - Gathers requirements and defines metrics before model creation
 
 ### Works After
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Creates relationships after tables are built
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Builds measures on top of the model structure
+- [relationship-architect](relationship-architect.md) - Creates relationships after tables are built
+- [dax-specialist](dax-specialist.md) - Builds measures on top of the model structure
 
 ### Collaborates With
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documents model structure and design decisions
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates table design and naming conventions
+- [documentation-expert](documentation-expert.md) - Documents model structure and design decisions
+- [quality-validator](quality-validator.md) - Validates table design and naming conventions
 
 ## Before Completing Any Task
 

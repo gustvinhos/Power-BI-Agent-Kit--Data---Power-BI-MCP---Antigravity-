@@ -8,12 +8,12 @@ Este workflow cria um modelo Star Schema completo do zero seguindo best practice
 
 ## Agentes Envolvidos
 
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - Levantamento de requisitos de negócio
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Criação de tabelas e estrutura
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Criação de relacionamentos
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Criação de medidas
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validação do modelo
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documentação final
+- [business-analyst](../../agents/analytics/business-analyst.md) - Levantamento de requisitos de negócio
+- [data-modeler](../../agents/development/data-modeler.md) - Criação de tabelas e estrutura
+- [relationship-architect](../../agents/development/relationship-architect.md) - Criação de relacionamentos
+- [dax-specialist](../../agents/development/dax-specialist.md) - Criação de medidas
+- [quality-validator](../../agents/development/quality-validator.md) - Validação do modelo
+- [documentation-expert](../../agents/development/documentation-expert.md) - Documentação final
 
 ## Pré-requisitos
 - Conexão ativa com Power BI Desktop

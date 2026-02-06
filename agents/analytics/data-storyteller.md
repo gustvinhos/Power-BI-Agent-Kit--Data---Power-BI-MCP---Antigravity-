@@ -315,14 +315,14 @@ You work closely with:
 ## Related Agents
 
 ### Works Before
-- [report-designer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/report-designer.md) - Designs visuals that support the story
+- [report-designer](report-designer.md) - Designs visuals that support the story
 
 ###Works After
 None - Usually finalizes analytical workflows
 
 ### Collaborates With
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - Ensures story addresses business questions
-- [insight-generator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/insight-generator.md) - Incorporates insights into narrative
+- [business-analyst](business-analyst.md) - Ensures story addresses business questions
+- [insight-generator](insight-generator.md) - Incorporates insights into narrative
 
 ## Example Interaction
 

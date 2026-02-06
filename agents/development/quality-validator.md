@@ -307,13 +307,13 @@ DIVIDE(
 All development agents - validates their work
 
 ### Works After
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documents model after validation
+- [documentation-expert](documentation-expert.md) - Documents model after validation
 
 ### Collaborates With
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Validates table structures
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Validates DAX quality
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Validates relationship integrity
-- [performance-optimizer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/performance-optimizer.md) - Works together on performance issues
+- [data-modeler](data-modeler.md) - Validates table structures
+- [dax-specialist](dax-specialist.md) - Validates DAX quality
+- [relationship-architect](relationship-architect.md) - Validates relationship integrity
+- [performance-optimizer](performance-optimizer.md) - Works together on performance issues
 
 ## Before Completing Validation
 

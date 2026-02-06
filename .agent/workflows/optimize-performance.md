@@ -8,11 +8,11 @@ Este workflow diagnostica e corrige problemas de performance em modelos Power BI
 
 ## Agentes Envolvidos
 
-- [performance-optimizer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/performance-optimizer.md) - Análise e otimização de performance
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Otimização de medidas DAX
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Otimização de estrutura de tabelas
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Otimização de relacionamentos
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validação pós-otimização
+- [performance-optimizer](../../agents/development/performance-optimizer.md) - Análise e otimização de performance
+- [dax-specialist](../../agents/development/dax-specialist.md) - Otimização de medidas DAX
+- [data-modeler](../../agents/development/data-modeler.md) - Otimização de estrutura de tabelas
+- [relationship-architect](../../agents/development/relationship-architect.md) - Otimização de relacionamentos
+- [quality-validator](../../agents/development/quality-validator.md) - Validação pós-otimização
 
 ## Pré-requisitos
 - Conexão ativa com modelo

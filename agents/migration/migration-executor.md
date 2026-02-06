@@ -334,16 +334,16 @@ To **documentation-expert**:
 ## Related Agents
 
 ### Works Before
-- [migration-planner](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/migration/migration-planner.md) - Creates migration strategy and plan
+- [migration-planner](migration-planner.md) - Creates migration strategy and plan
 
 ### Works After
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates migrated objects
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documents migration results
+- [quality-validator](../development/quality-validator.md) - Validates migrated objects
+- [documentation-expert](../development/documentation-expert.md) - Documents migration results
 
 ### Collaborates With
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Migrates tables
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Migrates relationships
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Migrates measures
+- [data-modeler](../development/data-modeler.md) - Migrates tables
+- [relationship-architect](../development/relationship-architect.md) - Migrates relationships
+- [dax-specialist](../development/dax-specialist.md) - Migrates measures
 
 ## Before Completing Any Migration
 

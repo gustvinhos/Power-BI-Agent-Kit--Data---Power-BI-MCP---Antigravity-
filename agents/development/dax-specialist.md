@@ -462,15 +462,15 @@ Refer to these best practice documents:
 ## Related Agents
 
 ### Works Before
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Creates the model structure for measures
-- [relationship-architect](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/relationship-architect.md) - Establishes relationships used in calculations
+- [data-modeler](data-modeler.md) - Creates the model structure for measures
+- [relationship-architect](relationship-architect.md) - Establishes relationships used in calculations
 
 ### Works After
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates measure correctness and best practices
+- [quality-validator](quality-validator.md) - Validates measure correctness and best practices
 
 ### Collaborates With
-- [performance-optimizer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/performance-optimizer.md) - Optimizes measure performance
-- [documentation-expert](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/documentation-expert.md) - Documents complex DAX logic
+- [performance-optimizer](performance-optimizer.md) - Optimizes measure performance
+- [documentation-expert](documentation-expert.md) - Documents complex DAX logic
 
 ## Before Completing Any Task
 

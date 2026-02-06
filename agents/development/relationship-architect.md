@@ -256,14 +256,14 @@ DimProduct (1) ───> (N) BridgeProductCategory (N) <─── (1) DimCatego
 ## Related Agents
 
 ### Works Before
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Creates tables that need to be connected
+- [data-modeler](data-modeler.md) - Creates tables that need to be connected
 
 ### Works After
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Uses relationships in measure calculations
+- [dax-specialist](dax-specialist.md) - Uses relationships in measure calculations
 
 ### Collaborates With
-- [data-modeler](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/data-modeler.md) - Works closely on model structure design
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Validates relationship integrity and best practices
+- [data-modeler](data-modeler.md) - Works closely on model structure design
+- [quality-validator](quality-validator.md) - Validates relationship integrity and best practices
 
 ## Before Completing Any Task
 

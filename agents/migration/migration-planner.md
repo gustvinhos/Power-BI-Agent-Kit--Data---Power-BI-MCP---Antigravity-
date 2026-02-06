@@ -303,14 +303,14 @@ After planning is complete, hand off to **migration-executor** with:
 ## Related Agents
 
 ### Works Before
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - May help define migration scope
-- [quality-validator](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/quality-validator.md) - Audits source model
+- [business-analyst](../analytics/business-analyst.md) - May help define migration scope
+- [quality-validator](../development/quality-validator.md) - Audits source model
 
 ### Works After
-- [migration-executor](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/migration/migration-executor.md) - Executes the migration plan
+- [migration-executor](migration-executor.md) - Executes the migration plan
 
 ### Collaborates With
-- [operations-manager](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/meta/operations-manager.md) - Coordinates complex multi-phase migrations
+- [operations-manager](../meta/operations-manager.md) - Coordinates complex multi-phase migrations
 
 ## Before Completing Any Plan
 

@@ -299,14 +299,14 @@ You work closely with:
 ## Related Agents
 
 ### Works Before
-- [business-analyst](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/business-analyst.md) - Defines analysis scope
+- [business-analyst](business-analyst.md) - Defines analysis scope
 
 ### Works After
-- [report-designer](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/report-designer.md) - Visualizes insights
+- [report-designer](report-designer.md) - Visualizes insights
 
 ### Collaborates With
-- [dax-specialist](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/development/dax-specialist.md) - Creates measures for analysis
-- [data-storyteller](file:///c:/Users/ThiagoReisAraujo/OneDrive%20-%20Axia%20Agro/Documentos/Apps/PowerBI%20-%20Copia/agents/analytics/data-storyteller.md) - Transforms insights into narratives
+- [dax-specialist](../development/dax-specialist.md) - Creates measures for analysis
+- [data-storyteller](data-storyteller.md) - Transforms insights into narratives
 
 ## Example Interaction
 
